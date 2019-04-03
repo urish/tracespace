@@ -39,6 +39,9 @@ module.exports = {
     {
       files: ['**/*test.js', '**/__tests__/**', 'scripts/init-test-env.js'],
       env: {mocha: true},
+      rules: {
+        'import/first': 'off',
+      },
     },
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -74,6 +77,7 @@ module.exports = {
             {functions: false, typedefs: false},
           ],
           '@typescript-eslint/prefer-interface': 'off',
+          '@typescript-eslint/no-var-requires': 'off',
         }
       ),
     },

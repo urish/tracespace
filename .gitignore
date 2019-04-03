@@ -2,6 +2,10 @@ node_modules
 coverage
 .nyc_output
 
+# compiled code
+packages/lexer/lib
+packages/parser/lib
+
 # artifacts
 bundle.*
 **/dist
