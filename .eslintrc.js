@@ -67,7 +67,8 @@ module.exports = {
             'warn',
             {allowExpressions: true},
           ],
-          '@typescript-eslint/array-type': ['error', 'generic'],
+          // TODO(mc, 2019-06-08): enable rule; defer to recommended
+          '@typescript-eslint/array-type': ['off'],
           '@typescript-eslint/no-unused-vars': [
             'error',
             {ignoreRestSiblings: true, argsIgnorePattern: '^_'},

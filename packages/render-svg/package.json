@@ -1,17 +1,18 @@
 {
-  "name": "@tracespace/parser",
+  "name": "@tracespace/render-svg",
   "private": true,
   "version": "4.0.2",
-  "description": "Gerber and drill file parser",
+  "description": "Render @tracespace/builder image trees as SVGs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tracespace/tracespace.git",
-    "directory": "packages/parser"
+    "directory": "packages/render-svg"
   },
   "scripts": {
-    "build": "babel src --ignore '**/__tests__/**' --out-dir lib --extensions '.ts' --root-mode upward",
+    "start": "node integration/server",
+    "build:": "babel src --ignore '**/__tests__/**' --out-dir lib --extensions '.ts' --root-mode upward",
     "clean": "rm -rf lib"
   },
   "keywords": [
@@ -30,8 +31,12 @@
   },
   "homepage": "https://github.com/tracespace/tracespace#readme",
   "dependencies": {
-    "@types/moo": "^0.5.0",
-    "@types/unist": "^2.0.3",
-    "moo": "^0.5.0"
+    "@tracespace/builder": "file:../builder",
+    "@tracespace/parser": "file:../parser",
+    "@types/hast-format": "^2.3.0",
+    "hast-util-to-html": "^6.0.1",
+    "hastscript": "^5.1.0",
+    "unist-util-map": "^1.0.5",
+    "whats-that-gerber": "file:../whats-that-gerber"
   }
 }

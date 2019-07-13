@@ -3,8 +3,9 @@ coverage
 .nyc_output
 
 # compiled code
-packages/lexer/lib
+packages/builder/lib
 packages/parser/lib
+packages/render-svg/lib
 
 # artifacts
 bundle.*

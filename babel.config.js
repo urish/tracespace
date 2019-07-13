@@ -22,7 +22,7 @@ module.exports = {
       ],
     },
     {
-      test: ['packages/parser'],
+      test: ['packages/builder', 'packages/parser', 'packages/render-svg'],
       presets: [
         [
           '@babel/preset-env',

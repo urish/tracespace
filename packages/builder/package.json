@@ -1,14 +1,14 @@
 {
-  "name": "@tracespace/parser",
+  "name": "@tracespace/builder",
   "private": true,
   "version": "4.0.2",
-  "description": "Gerber and drill file parser",
+  "description": "Build abstract board images from @tracespace/parser ASTs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tracespace/tracespace.git",
-    "directory": "packages/parser"
+    "directory": "packages/builder"
   },
   "scripts": {
     "build": "babel src --ignore '**/__tests__/**' --out-dir lib --extensions '.ts' --root-mode upward",
@@ -30,8 +30,13 @@
   },
   "homepage": "https://github.com/tracespace/tracespace#readme",
   "dependencies": {
-    "@types/moo": "^0.5.0",
-    "@types/unist": "^2.0.3",
-    "moo": "^0.5.0"
+    "@tracespace/parser": "file:../parser",
+    "@types/lodash.padend": "^4.6.6",
+    "@types/lodash.padstart": "^4.6.6",
+    "lodash.padend": "^4.6.1",
+    "lodash.padstart": "^4.6.1",
+    "unist-util-filter": "^1.0.2",
+    "unist-util-visit-parents": "^2.1.2",
+    "whats-that-gerber": "file:../whats-that-gerber"
   }
 }

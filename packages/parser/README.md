@@ -41,19 +41,23 @@ function parseGerberStream(stream) {
   const parser = createParser()
 
   return new Promise((resolve, reject) => {
-    const handleData = data => parser.feed(data)
-    const handleEnd = () => {
-      cleanup()
-      resolve(parser.results())
-    }
-    const handleError = error => {
-      cleanup()
-      reject(error)
-    }
-
     stream.on('error', handleError)
     stream.on('end', handleEnd)
     stream.on('data', handleData)
+
+    function handleData(data) {
+      parser.feed(data)
+    }
+
+    function handleEnd() {
+      cleanup()
+      resolve(parser.results())
+    }
+
+    function handleError(error) {
+      cleanup()
+      reject(error)
+    }
 
     function cleanup() {
       stream.removeListener('data', handleData)
@@ -110,4 +114,4 @@ See the [lexer documentation][lexer-docs] for more information about the `Lexer`
 @tracespace/parser exports some of its lower level modules for advanced usage. If you'd like to check them out, see the following documentation:
 
 - Lexer/tokenization: [`./src/lexer/README.md`][lexer-docs]
-- AST and node types: [./src/tree/README.md][tree-docs]
+- AST and node types: [`./src/tree/README.md`][tree-docs]

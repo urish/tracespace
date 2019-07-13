@@ -5,6 +5,7 @@
     "emitDeclarationOnly": true,
     "outDir": "./lib"
   },
-  "include": ["./src"],
-  "exclude": ["**/__tests__/**"]
+  "include": ["../../typings", "./src"],
+  "exclude": ["**/__tests__/**"],
+  "references": [{"path": "../parser"}, {"path": "../builder"}]
 }
