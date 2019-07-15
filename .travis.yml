@@ -26,16 +26,14 @@ _deploy_base: &_deploy_base
 # jobs for node_js versions above automatically added to matrix "test" stage
 jobs:
   include:
-    - # lint and typecheck
+    - # run lints
       stage: test
-      name: Lint and typecheck
-      script:
-        - npm run lint
-        - npm run check
+      name: Lint
+      script: npm run lint
 
-    - # test that asset builds all work
+    - # test that asset builds all work (type-checking included)
       stage: test
-      name: Build assets
+      name: Build
       script: npm run build:all
 
     - # build and publish
