@@ -1,9 +1,9 @@
 {
   "extends": "@tracespace/config/tsconfig-base.json",
-  "references": [{"path": "../parser"}, {"path": "../builder"}],
+  "references": [],
   "compilerOptions": {
     "composite": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "rootDir": "src",
     "outDir": "lib"
   },

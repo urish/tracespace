@@ -1,1 +1,3 @@
 src
+tsconfig.tsbuildinfo
+**/__tests__/**

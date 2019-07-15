@@ -2,8 +2,7 @@ import {Action} from '../state'
 
 export type WorkerMessageEvent = {data: Action}
 
-export class RenderWorker extends Worker {
-  constructor()
+export interface RenderWorker extends Worker {
   onmessage: (event: WorkerMessageEvent) => void
   postMessage(message: Action): void
 }

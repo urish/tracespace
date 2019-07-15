@@ -3,9 +3,11 @@ coverage
 .nyc_output
 
 # compiled code
+apps/view/lib
 packages/builder/lib
 packages/parser/lib
 packages/render-svg/lib
+tsconfig.tsbuildinfo
 
 # artifacts
 bundle.*

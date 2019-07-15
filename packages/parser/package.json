@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "babel src --ignore '**/__tests__/**' --out-dir lib --extensions '.ts' --root-mode upward",
+    "watch": "npm run build -- --watch",
     "clean": "rm -rf lib"
   },
   "keywords": [

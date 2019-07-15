@@ -1,11 +1,11 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@tracespace/config/tsconfig-base.json",
+  "references": [{"path": "../parser"}],
   "compilerOptions": {
     "composite": true,
     "emitDeclarationOnly": true,
-    "outDir": "./lib"
+    "rootDir": "src",
+    "outDir": "lib"
   },
-  "include": ["../../typings", "./src"],
-  "exclude": ["**/__tests__/**"],
-  "references": [{"path": "../parser"}]
+  "include": ["typings", "src"]
 }

@@ -1,17 +1,10 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "jsx": "preserve",
-    "declaration": true,
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true
-  },
+  "compileOnSave": true,
+  "files": [],
   "references": [
     {"path": "./packages/parser"},
     {"path": "./packages/builder"},
-    {"path": "./packages/render-svg"}
+    {"path": "./packages/render-svg"},
+    {"path": "./apps/view"}
   ]
 }
