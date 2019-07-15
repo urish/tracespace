@@ -11,13 +11,10 @@
   "ignoreChanges": [
     "**/*.md",
     "**/*test.js",
+    "**/__tests__/**",
     "**/integration/**/*.js",
     "**/example/**/*.js",
     "**/scripts/**/*.js"
   ],
-  "packages": [
-    "apps/*",
-    "config",
-    "packages/*"
-  ]
+  "packages": ["apps/*", "config", "packages/*"]
 }

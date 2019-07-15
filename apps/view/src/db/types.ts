@@ -10,7 +10,7 @@ export type DbSource = {id: string; contents: Buffer}
 
 export type DbLayersMap = {[id: string]: DbLayer}
 
-export class BoardDatabase extends Dexie {
+export interface BoardDatabase extends Dexie {
   boards: Dexie.Table<DbBoard, string>
   layers: Dexie.Table<DbLayer, string>
   sources: Dexie.Table<DbSource, string>
@@ -18,6 +18,6 @@ export class BoardDatabase extends Dexie {
 
 export type DbAppPreferences = AppPreferences
 
-export class AppDatabase extends Dexie {
+export interface AppDatabase extends Dexie {
   preferences: Dexie.Table<DbAppPreferences, number>
 }
