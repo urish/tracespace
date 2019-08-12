@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "test": "cross-env INTEGRATION=1 nyc mocha",
-    "test:watch": "mocha --watch --reporter dot",
+    "test:watch": "mocha --watch --reporter min",
     "coverage": "nyc report --reporter=lcov",
     "start": "lerna run start --parallel",
     "prebuild": "npm run clean",
