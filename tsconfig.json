@@ -3,8 +3,8 @@
   "files": [],
   "references": [
     {"path": "./packages/parser"},
-    {"path": "./packages/builder"},
-    {"path": "./packages/render-svg"},
+    {"path": "./packages/plotter"},
+    {"path": "./packages/renderer"},
     {"path": "./apps/view"}
   ]
 }

@@ -137,6 +137,7 @@
     "typescript": "^3.5.1",
     "unist-builder": "^1.0.3",
     "unist-util-select": "^2.0.0",
+    "untildify": "^4.0.0",
     "webpack": "^4.32.2",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
@@ -145,11 +146,11 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@tracespace/builder": "file:packages/builder",
+    "@tracespace/plotter": "file:packages/plotter",
     "@tracespace/cli": "file:packages/cli",
     "@tracespace/fixtures": "file:packages/fixtures",
     "@tracespace/parser": "file:packages/parser",
-    "@tracespace/render-svg": "file:packages/render-svg",
+    "@tracespace/renderer": "file:packages/renderer",
     "@tracespace/view": "file:apps/view",
     "@tracespace/www": "file:apps/www",
     "@tracespace/xml-id": "file:packages/xml-id",

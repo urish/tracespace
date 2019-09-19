@@ -1,0 +1,44 @@
+{
+  "name": "@tracespace/plotter",
+  "private": true,
+  "version": "4.0.2",
+  "description": "Build abstract board images from @tracespace/parser ASTs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracespace/tracespace.git",
+    "directory": "packages/plotter"
+  },
+  "scripts": {
+    "build": "babel src --ignore '**/__tests__/**' --out-dir lib --extensions '.ts' --root-mode upward",
+    "watch": "npm run build -- --watch",
+    "clean": "rm -rf lib"
+  },
+  "keywords": [
+    "pcb",
+    "circuit",
+    "board",
+    "hardware",
+    "electronics"
+  ],
+  "contributors": [
+    "Mike Cousins <mike@cousins.io> (https://mike.cousins.io)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tracespace/tracespace/issues"
+  },
+  "homepage": "https://github.com/tracespace/tracespace#readme",
+  "dependencies": {
+    "@tracespace/parser": "file:../parser",
+    "@types/lodash.padend": "^4.6.6",
+    "@types/lodash.padstart": "^4.6.6",
+    "lodash.padend": "^4.6.1",
+    "lodash.padstart": "^4.6.1",
+    "unist-util-filter": "^1.0.2",
+    "unist-util-find": "^1.0.1",
+    "unist-util-visit-parents": "^2.1.2",
+    "whats-that-gerber": "file:../whats-that-gerber"
+  }
+}

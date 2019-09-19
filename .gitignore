@@ -4,9 +4,9 @@ coverage
 
 # compiled code
 apps/view/lib
-packages/builder/lib
+packages/plotter/lib
 packages/parser/lib
-packages/render-svg/lib
+packages/renderer/lib
 tsconfig.tsbuildinfo
 
 # artifacts
