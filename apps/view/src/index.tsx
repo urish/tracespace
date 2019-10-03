@@ -3,9 +3,9 @@ import React from 'react'
 import './styles'
 
 Promise.all([
-  import('react-dom'),
-  import('./App'),
-  import('./state/StoreProvider'),
+  import('react-dom') as any,
+  import('./App') as any,
+  import('./state/StoreProvider') as any,
 ]).then(imports => {
   const [
     {default: ReactDom},

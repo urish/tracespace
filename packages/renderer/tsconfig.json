@@ -1,6 +1,6 @@
 {
   "extends": "@tracespace/config/tsconfig-base.json",
-  "references": [{"path": "../parser"}, {"path": "../builder"}],
+  "references": [{"path": "../parser"}, {"path": "../plotter"}],
   "compilerOptions": {
     "composite": true,
     "emitDeclarationOnly": true,

@@ -9,6 +9,8 @@ import {
   BoardDatabase,
 } from '../db'
 
+import {Board} from '../types'
+
 import {RenderWorkerContext, WorkerMessageEvent} from './types'
 
 import {
@@ -20,6 +22,7 @@ import {
   stackupToZipBlob,
   updateBoard,
   updateBoardThumbnail,
+  StackupFromFiles,
 } from './models'
 
 import {
@@ -62,11 +65,11 @@ ctx.onmessage = function receive(event) {
     case CREATE_BOARD_FROM_URL: {
       const url = request.payload
 
-      response = Promise.all([
-        findBoardByUrl(db, url),
-        urlToStackups(url),
-      ]).then(async result => {
-        let [existingBoard, [selfContained, shared]] = result
+      response = Promise.all<
+        Board | null,
+        [StackupFromFiles, StackupFromFiles]
+      >([findBoardByUrl(db, url), urlToStackups(url)]).then(async result => {
+        const [existingBoard, [selfContained, shared]] = result
         let board = stackupToBoard(selfContained)
         let saveQuery
 

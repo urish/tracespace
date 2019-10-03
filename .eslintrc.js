@@ -1,40 +1,36 @@
 'use strict'
 
-const extend = require('xtend')
-
-const configStandard = require('eslint-config-standard')
-const configPrettierTs = require('eslint-config-prettier/@typescript-eslint')
-const pluginTs = require('@typescript-eslint/eslint-plugin')
-
-// HACK: overriding parserOptions doesn't seem to do anything because
-// eslint-config-standard specifies it; delete it as a workaround
-delete configStandard.parserOptions
-
 module.exports = {
   root: true,
-  parserOptions: {ecmaVersion: 5},
-  env: {es6: false},
-  extends: [
-    'standard',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/standard',
-  ],
+  extends: ['standard', 'plugin:prettier/recommended', 'prettier/standard'],
   overrides: [
     {
       files: [
-        '.*.js',
-        '**/*.config.js',
-        'config/**/*.js',
-        'packages/cli/**/*.js',
-        'packages/fixtures/**/*.js',
-        '**/integration/**/*.js',
-        '**/example/**/*.js',
-        '**/scripts/**/*.js',
+        'packages/gerber-parser/**/*.js',
+        'packages/gerber-plotter/**/*.js',
+        'packages/gerber-to-svg/**/*.js',
+        'packages/pcb-stackup/**/*.js',
+        'packages/pcb-stackup-core/**/*.js',
+        'packages/whats-that-gerber/**/*.js',
+        'packages/xml-id/**/*.js',
       ],
+      parserOptions: {ecmaVersion: 5, sourceType: 'script'},
+      env: {es6: false},
+    },
+    {
+      files: ['**/*.config.js', '**/integration/**/*.js', '**/example/**/*.js'],
       parserOptions: {ecmaVersion: 6},
       env: {es6: true},
+    },
+    {
+      files: ['apps/**'],
+      env: {browser: true},
+      plugins: ['react-hooks'],
+      extends: ['plugin:react/recommended', 'prettier/react'],
+      rules: {
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
+      },
     },
     {
       files: ['**/*test.js', '**/__tests__/**', 'scripts/init-test-env.js'],
@@ -45,47 +41,37 @@ module.exports = {
     },
     {
       files: ['**/*.ts', '**/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        sourceType: 'module',
-        project: './tsconfig.json',
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'prettier/@typescript-eslint',
+      ],
+      rules: {
+        'no-dupe-class-members': 'off',
+        'no-redeclare': 'off',
+        'no-useless-constructor': 'off',
+        'import/export': 'off',
+        '@typescript-eslint/camelcase': 'off',
+        '@typescript-eslint/explicit-member-accessibility': 'off',
+        '@typescript-eslint/explicit-function-return-type': [
+          'warn',
+          {allowExpressions: true},
+        ],
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {ignoreRestSiblings: true, argsIgnorePattern: '^_'},
+        ],
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          {functions: false, typedefs: false},
+        ],
+        '@typescript-eslint/prefer-interface': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
       },
-      env: {es6: true, browser: true},
-      plugins: ['react-hooks', '@typescript-eslint'],
-      rules: extend(
-        pluginTs.configs.recommended.rules,
-        configPrettierTs.rules,
-        {
-          'no-dupe-class-members': 'off',
-          'no-redeclare': 'off',
-          'no-useless-constructor': 'off',
-          'import/export': 'off',
-          'react-hooks/rules-of-hooks': 'error',
-          '@typescript-eslint/camelcase': 'off',
-          '@typescript-eslint/explicit-member-accessibility': 'off',
-          '@typescript-eslint/explicit-function-return-type': [
-            'warn',
-            {allowExpressions: true},
-          ],
-          // TODO(mc, 2019-06-08): enable rule; defer to recommended
-          '@typescript-eslint/array-type': ['off'],
-          '@typescript-eslint/no-unused-vars': [
-            'error',
-            {ignoreRestSiblings: true, argsIgnorePattern: '^_'},
-          ],
-          '@typescript-eslint/no-use-before-define': [
-            'error',
-            {functions: false, typedefs: false},
-          ],
-          '@typescript-eslint/prefer-interface': 'off',
-          '@typescript-eslint/no-var-requires': 'off',
-        }
-      ),
     },
   ],
   settings: {
     react: {
-      version: '16.8',
+      version: '16.10',
     },
   },
 }

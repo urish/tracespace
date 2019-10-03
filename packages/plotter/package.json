@@ -38,7 +38,7 @@
     "lodash.padstart": "^4.6.1",
     "unist-util-filter": "^1.0.2",
     "unist-util-find": "^1.0.1",
-    "unist-util-visit-parents": "^2.1.2",
+    "unist-util-visit-parents": "^3.0.0",
     "whats-that-gerber": "file:../whats-that-gerber"
   }
 }

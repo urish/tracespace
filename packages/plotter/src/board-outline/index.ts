@@ -1,3 +1,3 @@
-import {PathSegment} from '../plot-tree'
+// import {PathSegment} from '../plot-tree'
 
-export function optimizeSegements(segments: Noe)
+// export function optimizeSegements(segments: PathSegment[]):

@@ -2,7 +2,7 @@
 'use strict'
 
 const {getGerberSpecs, server} = require('@tracespace/fixtures')
-const {name} = require('../package.json')
+const {name} = require('../package.json.js')
 const getSuiteResults = require('./get-results')
 
 const PORT = 8003

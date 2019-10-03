@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/tracespace/tracespace#readme",
   "dependencies": {
-    "@tracespace/plotter": "file:../builder",
+    "@tracespace/plotter": "file:../plotter",
     "@tracespace/parser": "file:../parser",
     "@tracespace/xml-id": "file:../xml-id",
     "@types/hast-format": "^2.3.0",
-    "hast-util-to-html": "^6.0.1",
+    "hast-util-to-html": "^6.0.2",
     "hastscript": "^5.1.0",
     "unist-util-map": "^1.0.5",
     "whats-that-gerber": "file:../whats-that-gerber"

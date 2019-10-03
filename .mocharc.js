@@ -8,4 +8,5 @@ module.exports = {
     '@(apps|packages)/**/__tests__/*.@(js|ts|tsx)',
     'packages/**/*test.js',
   ],
+  exclude: ['**/node_modules/**'],
 }
