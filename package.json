@@ -88,6 +88,7 @@
     "@typescript-eslint/parser": "^2.3.2",
     "aws-sdk": "^2.540.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "codecov": "^3.6.1",
